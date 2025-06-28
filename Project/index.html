@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-950 text-white font-sans min-h-screen flex items-start justify-center px-4 pt-12 select-none"
+  >
+    <div class="w-full max-w-2xl space-y-8">
+      <header class="text-center space-y-2">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          GitHub User Finder
+        </h1>
+        <p class="text-gray-400 text-base sm:text-lg">
+          Search and view GitHub user profiles in style.
+        </p>
+      </header>
+
+      <div
+        class="flex items-center bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 gap-3 focus-within:ring-2 focus-within:ring-blue-500 transition"
+      >
+        <input
+          type="text"
+          placeholder="Enter GitHub username..."
+          class="usernameinp flex-1 bg-transparent outline-none text-white placeholder-gray-400 text-sm sm:text-base"
+        />
+        <button
+          class="search bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+        >
+          Search
+        </button>
+      </div>
+
+      <div id="skeleton" class="space-y-4 hidden animate-pulse">
+        <div class="flex gap-6">
+          <div class="w-24 h-24 bg-gray-800 rounded-full"></div>
+          <div class="flex-1 space-y-2">
+            <div class="h-5 bg-gray-800 rounded w-2/3"></div>
+            <div class="h-4 bg-gray-700 rounded w-1/2"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="h-10 bg-gray-800 rounded"></div>
+          <div class="h-10 bg-gray-800 rounded"></div>
+          <div class="h-10 bg-gray-800 rounded"></div>
+        </div>
+      </div>
+
+      <div
+        class="card bg-gray-900 border border-gray-700 rounded p-6 shadow-xl flex flex-col sm:flex-row gap-6 transition-all duration-300"
+      ></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
